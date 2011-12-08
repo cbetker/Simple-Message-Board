@@ -1,9 +1,15 @@
 Blog::Application.routes.draw do
-  resources :posts
+  
 
-  resources :topics
+  resources :topics, :except => [:index, :show, :destroy, :new, :create] do
+    resources :posts, :except => :index
+  end
 
-  resources :forums
+  resources :forums do
+    resources :topics, :except => :index
+  end
+
+  #match "/new_topic_for_forum/:id" => "topics#new", :as => "new_forum_topic"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

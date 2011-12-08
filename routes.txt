@@ -1,0 +1,22 @@
+     topic_posts POST   /topics/:topic_id/posts(.:format)           {:action=>"create", :controller=>"posts"}
+  new_topic_post GET    /topics/:topic_id/posts/new(.:format)       {:action=>"new", :controller=>"posts"}
+ edit_topic_post GET    /topics/:topic_id/posts/:id/edit(.:format)  {:action=>"edit", :controller=>"posts"}
+      topic_post GET    /topics/:topic_id/posts/:id(.:format)       {:action=>"show", :controller=>"posts"}
+                 PUT    /topics/:topic_id/posts/:id(.:format)       {:action=>"update", :controller=>"posts"}
+                 DELETE /topics/:topic_id/posts/:id(.:format)       {:action=>"destroy", :controller=>"posts"}
+      edit_topic GET    /topics/:id/edit(.:format)                  {:action=>"edit", :controller=>"topics"}
+           topic PUT    /topics/:id(.:format)                       {:action=>"update", :controller=>"topics"}
+    forum_topics POST   /forums/:forum_id/topics(.:format)          {:action=>"create", :controller=>"topics"}
+ new_forum_topic GET    /forums/:forum_id/topics/new(.:format)      {:action=>"new", :controller=>"topics"}
+edit_forum_topic GET    /forums/:forum_id/topics/:id/edit(.:format) {:action=>"edit", :controller=>"topics"}
+     forum_topic GET    /forums/:forum_id/topics/:id(.:format)      {:action=>"show", :controller=>"topics"}
+                 PUT    /forums/:forum_id/topics/:id(.:format)      {:action=>"update", :controller=>"topics"}
+                 DELETE /forums/:forum_id/topics/:id(.:format)      {:action=>"destroy", :controller=>"topics"}
+          forums GET    /forums(.:format)                           {:action=>"index", :controller=>"forums"}
+                 POST   /forums(.:format)                           {:action=>"create", :controller=>"forums"}
+       new_forum GET    /forums/new(.:format)                       {:action=>"new", :controller=>"forums"}
+      edit_forum GET    /forums/:id/edit(.:format)                  {:action=>"edit", :controller=>"forums"}
+           forum GET    /forums/:id(.:format)                       {:action=>"show", :controller=>"forums"}
+                 PUT    /forums/:id(.:format)                       {:action=>"update", :controller=>"forums"}
+                 DELETE /forums/:id(.:format)                       {:action=>"destroy", :controller=>"forums"}
+            root        /(.:format)                                 {:controller=>"forums", :action=>"index"}

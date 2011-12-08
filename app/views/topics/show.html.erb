@@ -8,10 +8,9 @@
 <p>
   <b>Posts:</b><br />
   <% @posts.each do | post | %>
-    <%= link_to post.content, post %><br />
+    <%= link_to post.content, topic_post_path(:topic_id => @topic.id, :id => post.id) %><br />
   <% end %>
 </p>
 
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+<%= link_to 'Edit', edit_topic_path(@topic) %>
