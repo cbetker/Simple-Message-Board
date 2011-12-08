@@ -15,6 +15,14 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+  
+  <% f.fields_for :posts do | builder | %>
+    <p>
+      <%= builder.label :content, "Body of Post:" %><br />
+      <%= builder.text_area :content, :rows => 5 %>
+    </p>
+  <% end %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

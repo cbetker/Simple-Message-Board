@@ -4,7 +4,16 @@
   <b>Name:</b>
   <%= @forum.name %>
 </p>
+  
+<p>
+  <b>Active Threads:</b><br />
+  <% @topics.each do | topic | %>
+    <%= link_to topic.name, topic %> | Post Count: <%= Post.get_post_count(topic.id) %><br />
+  <% end %>
+</p>
 
 
+<%= link_to 'New Topic', new_topic_path %> |
 <%= link_to 'Edit', edit_forum_path(@forum) %> |
 <%= link_to 'Back', forums_path %>
+

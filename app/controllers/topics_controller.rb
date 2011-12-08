@@ -3,6 +3,7 @@ class TopicsController < ApplicationController
   # GET /topics.xml
   def index
     @topics = Topic.all
+    @posts = Post.where("topic_id = ?", params[:id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +15,7 @@ class TopicsController < ApplicationController
   # GET /topics/1.xml
   def show
     @topic = Topic.find(params[:id])
+    @posts = Post.where("topic_id = ?", params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +27,7 @@ class TopicsController < ApplicationController
   # GET /topics/new.xml
   def new
     @topic = Topic.new
+    @topic.posts.build
 
     respond_to do |format|
       format.html # new.html.erb
